@@ -255,4 +255,9 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "M-o") 'prelude-smart-open-line)
 (global-set-key (kbd "M-o") 'open-line)
 
+
+
+;; Gdb script mode:
+(add-to-list 'auto-mode-alist '("\\.gdb\\'" . gdb-script-mode))
+
 (provide 'setup-editing)
