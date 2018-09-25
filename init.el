@@ -29,6 +29,7 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 (require 'setup-c)
+(require 'setup-org)
 ;;------------------------------------------------------------------------------
 ;; General config
 ;; Load the theme
