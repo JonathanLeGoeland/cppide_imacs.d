@@ -1,7 +1,7 @@
 (setq url-http-proxy-basic-auth-storage
       (list (list "webproxy-fr.eu.airbus.corp:3128"
                   (cons "Input your LDAP UID !"
-                        (base64-encode-string "XXX:YYY")))))
+                        (base64-encode-string (format "%s:%s" (getenv "USER") (getenv "win_pwd")))))))
 
 (require 'package)
 (add-to-list 'package-archives

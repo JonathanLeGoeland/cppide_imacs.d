@@ -8,9 +8,11 @@
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
+(use-package flycheck)
 (require 'flycheck)
 (add-hook 'c-mode-common-hook 'flycheck-mode)
 (put 'flycheck-clang-args 'safe-local-variable (lambda (xx) t))
+(use-package auto-highlight-symbol)
 (require 'auto-highlight-symbol)
 (add-hook 'c-mode-common-hook 'auto-highlight-symbol-mode)
 ;;(auto-highlight-symbol-mode)
@@ -39,7 +41,7 @@
 ;; Display function signature in minibuffer.
 (global-semantic-idle-summary-mode)
 
-
+(use-package srefactor)
     (require 'srefactor)
     (require 'srefactor-lisp)
     
@@ -54,6 +56,7 @@
     (global-set-key (kbd "M-RET b") 'srefactor-lisp-format-buffer)
 
 ;; function arguments
+(use-package function-args)
 (require 'function-args)
 (fa-config-default)
 

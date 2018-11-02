@@ -2,6 +2,10 @@
 ;; org mode customisation is done            ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(use-package flycheck)
+(require 'flycheck)
+
+
 (setq org-todo-keywords
       '((sequence "TODO" "DELEGATED" "STOPPED" "WAITING" "DONE" )))
 
