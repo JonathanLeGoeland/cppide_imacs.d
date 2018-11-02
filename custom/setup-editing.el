@@ -260,4 +260,7 @@ Position the cursor at it's beginning, according to the current mode."
 ;; Gdb script mode:
 (add-to-list 'auto-mode-alist '("\\.gdb\\'" . gdb-script-mode))
 
+(global-unset-key (kbd "C-t"))
+(global-set-key (kbd "C-t") 'transpose-chars)
+
 (provide 'setup-editing)
