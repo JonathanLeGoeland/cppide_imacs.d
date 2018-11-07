@@ -139,4 +139,7 @@
       (setq projectile-completion-system 'helm)
       (setq projectile-indexing-method 'alien))))
 
+
+(define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
+
 (provide 'setup-helm)

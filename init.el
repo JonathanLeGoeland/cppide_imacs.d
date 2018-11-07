@@ -97,3 +97,19 @@
 
                                         ; Use fundamental mode when editing plantuml blocks with C-c '
 (add-to-list 'org-src-lang-modes (quote ("plantuml" . fundamental)))
+
+
+;; This needs to be better encapsulated through detection of file existance.
+(defun open-titv-conf-files ()
+  "Open the configuration files of titv."
+  (interactive)
+  (let ((base-folder "/home/avinteg/TI_TV_ENV/BswTools/0.4.0-JCA-SNAPSHOT/"))
+    (find-file (concat base-folder "config/libgdbmi.xml"))
+    (find-file (concat base-folder "config/libemu.xml"))))
+
+;;==============================================================================
+;; Modes
+;;------------------------------------------------------------------------------
+;; Configure roobot - mode.
+;;(load-file (concat (file-name-directory load-file-name) "modes/robot-mode.el"))
+(load-file "~/cppide/.emacs.d/modes/robot-mode.el")
