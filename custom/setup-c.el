@@ -60,6 +60,15 @@
 (require 'function-args)
 (fa-config-default)
 
+;;; ----------------------------------------------------------------------------
+;;; Insure that imenu-list
+(use-package imenu-list)
+
+;;; ----------------------------------------------------------------------------
+;;; Insure that cscope is loaded.
+(use-package   xcscope)
+(use-package helm-cscope)
+
 
 ;;; ----------------------------------------------------------------------------
 ;;; Custom function

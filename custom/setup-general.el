@@ -1,7 +1,10 @@
+;; Removing the tool bar, keeping the menu bar
 ;;(menu-bar-mode -1)
 (tool-bar-mode -1)
 
-
+;; Stop generating dummy files with ~ and #
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)

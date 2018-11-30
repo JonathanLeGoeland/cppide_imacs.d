@@ -30,6 +30,7 @@
 (require 'setup-editing)
 (require 'setup-c)
 (require 'setup-org)
+(require 'setup-tex)
 ;;------------------------------------------------------------------------------
 ;; General config
 ;; Load the theme
@@ -107,6 +108,11 @@
     (find-file (concat base-folder "config/libgdbmi.xml"))
     (find-file (concat base-folder "config/libemu.xml"))))
 
+(defun open-demo-app-script ()
+  "Open robot scripts of demo app"
+  (interactive)
+  (let ((base-folder "~/Work/ng/T1042/BSW_TOOL/bswtool_demoapp/src/verif/integration/tests/scripts/"))
+    (dired base-folder)))
 ;;==============================================================================
 ;; Modes
 ;;------------------------------------------------------------------------------
