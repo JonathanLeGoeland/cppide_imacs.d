@@ -164,4 +164,11 @@ Version 2015-09-18"
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
 
+;; To have the full path of the visited file in the frame title
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
+
+
 (provide 'setup-general)
