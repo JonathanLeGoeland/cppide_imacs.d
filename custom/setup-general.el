@@ -63,7 +63,7 @@
 (windmove-default-keybindings)
 
 ;; Which key mode
-;; (require which-key)
+;; (require 'which-key)
 (which-key-mode)
 
 
@@ -169,6 +169,15 @@ Version 2015-09-18"
       '((:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
+
+;; ace-window-display-mode
+(require 'ace-window)
+(global-set-key (kbd "C-x o") 'ace-window)
+
+;; Allow fill-paragraph to work nicely on bullet list
+(setq paragraph-start "\f\\|[ \t]*$\\|[ \t]*[-+*] +.+$"
+      paragraph-separate "$")
+
 
 
 (provide 'setup-general)

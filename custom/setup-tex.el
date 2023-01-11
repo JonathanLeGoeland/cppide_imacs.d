@@ -5,7 +5,7 @@
 (use-package flycheck)
 (require 'flycheck)
 
-(require 'tex-site) ; incoke the AUCTEX package
+;;(require 'tex-site) ; incoke the AUCTEX package
 
 (add-hook 'LaTeX-mode-hook (lambda ()
                            ;; (ispell-change-dictionary "en")
