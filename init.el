@@ -38,6 +38,7 @@
 (require 'setup-org)
 (require 'setup-tex)
 (require 'setup-perl)
+(require 'setup-python)
 ;;------------------------------------------------------------------------------
 ;; General config
 ;; Load the theme
@@ -61,12 +62,21 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
+   '(vterm org-roam org-redmine org-bullets yasnippet-snippets elpy shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-document-title ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.5 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.75))))
+ '(org-level-2 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif"))))
+ '(org-level-6 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif"))))
+ '(org-level-7 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif"))))
+ '(org-level-8 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "red" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "orange" :weight bold))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "cyan" :weight bold))))
@@ -77,53 +87,7 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "black" :weight bold))))
  '(rainbow-delimiters-unmatched-face ((t (:background "red" :weight bold)))))
 
-;;------------------------------------------------------------------------------
-;; Confgure ogrg-babel
-;; (setq org-plantuml-jar-path "~/bin/plantuml/plantuml.jar")
-
-;; (defun bh/display-inline-images ()
-;;   (condition-case nil
-;;       (org-display-inline-images)
-;;     (error nil)))
-
-;; (org-babel-do-load-languages
-;;  (quote org-babel-load-languages)
-;;  (quote ((emacs-lisp . t)
-;;          (dot . t)
-;;          (ditaa . t)
-;;          (R . t)
-;;          (python . t)
-;;          (ruby . t)
-;;          (gnuplot . t)
-;;          (clojure . t)
-;;          (sh . t)
-;;          (ledger . t)
-;;          (org . t)
-;;          (plantuml . t)
-;;          (latex . t))))
-
-;; ;; (org-babel-do-load-languages
-;; ;;  'org-babel-load-languages
-;; ;;  '((python . t)))
-;;                                         ; Do not prompt to confirm evaluation
-;;                                         ; This may be dangerous - make sure you understand the consequences
-;;                                         ; of setting this -- see the docstring for details
-;; (setq org-confirm-babel-evaluate nil)
-
-;;                                         ; Use fundamental mode when editing plantuml blocks with C-c '
-;; (add-to-list 'org-src-lang-modes (quote ("plantuml" . fundamental)))
-
-
-;; ;; This needs to be better encapsulated through detection of file existance.
-;; (defun open-titv-conf-files ()
-;;   "Open the configuration files of titv."
-;;   (interactive)
-;;   (let ((base-folder "/home/avinteg/TI_TV_ENV/BswTools/0.4.0-JCA-SNAPSHOT/"))
-;;     (find-file (concat base-folder "config/libgdbmi.xml"))
-;;     (find-file (concat base-folder "config/libemu.xml"))))
-
-;; (defun open-demo-app-script ()
-;;   "Open robot scripts of demo app"
-;;   (interactive)
-;;   (let ((base-folder "~/Work/ng/T1042/BSW_TOOL/bswtool_demoapp/src/verif/integration/tests/scripts/"))
-;;     (dired base-folder)))
+;;----------------------------------------------------------
+;; vterm: To have a good interaction with terminals.
+(use-package vterm
+  :ensure t)

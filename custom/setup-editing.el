@@ -48,7 +48,7 @@
 (use-package undo-tree
   :init
   (global-undo-tree-mode 1))
-
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
 ;; Package: yasnippet
 ;; GROUP: Editing -> Yasnippet
