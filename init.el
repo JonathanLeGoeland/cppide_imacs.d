@@ -62,21 +62,25 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(vterm org-roam org-redmine org-bullets yasnippet-snippets elpy shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
+   '(magit plantuml-mode vterm org-roam org-redmine org-bullets yasnippet-snippets elpy shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
+
+;;----------------------------------------------------------
+;; vterm: To have a good interaction with terminals.
+(use-package vterm
+  :ensure t)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-document-title ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.5 :underline nil))))
- '(org-level-1 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.75))))
- '(org-level-2 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.5))))
- '(org-level-3 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.25))))
- '(org-level-4 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif" :height 1.1))))
- '(org-level-5 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif"))))
- '(org-level-6 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif"))))
- '(org-level-7 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif"))))
- '(org-level-8 ((t (:inherit default :weight bold :foreground "black" :family "Sans Serif"))))
+ '(org-level-1 ((t (:background nil :extend t :weight bold :foreground "red" :underline t))))
+ '(org-level-2 ((t (:background nil :extend t :weight bold :foreground "orange" :underline t))))
+ '(org-level-3 ((t (:background nil :extend t :weight bold :foreground "cyan" :underline t))))
+ '(org-level-4 ((t (:background nil :extend t :weight bold :foreground "green" :underline t))))
+ '(org-level-5 ((t (:background nil :extend t :weight bold :foreground "blue" :underline t))))
+ '(org-level-6 ((t (:background nil :extend t :weight bold :foreground "violet" :underline t))))
+ '(org-level-7 ((t (:background nil :extend t :weight bold :foreground "purple" :underline t))))
+ '(org-level-8 ((t (:background nil :extend t :weight bold :foreground "black" :underline t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "red" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "orange" :weight bold))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "cyan" :weight bold))))
@@ -86,8 +90,3 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "purple" :weight bold))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "black" :weight bold))))
  '(rainbow-delimiters-unmatched-face ((t (:background "red" :weight bold)))))
-
-;;----------------------------------------------------------
-;; vterm: To have a good interaction with terminals.
-(use-package vterm
-  :ensure t)
