@@ -69,6 +69,10 @@
 (use-package   xcscope)
 (use-package helm-cscope)
 
+(define-key c-mode-map (kbd "C-c s f f") 'helm-cscope-find-this-file)
+(define-key c-mode-map (kbd "C-c s f s") 'helm-cscope-find-this-symbol)
+(define-key c-mode-map (kbd "C-c s f g") 'helm-cscope-find-global-definition)
+(define-key c-mode-map (kbd "C-c s p") 'helm-cscope-pop-mark)
 
 ;;; ----------------------------------------------------------------------------
 ;;; Custom function
@@ -79,6 +83,8 @@
    "// TODO: Implement this."))
 
 (global-set-key (kbd "C-c jit") 'insert-todo)
+
+
 
 
 (provide 'setup-c)
