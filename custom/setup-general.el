@@ -178,6 +178,9 @@ Version 2015-09-18"
 (setq paragraph-start "\f\\|[ \t]*$\\|[ \t]*[-+*] +.+$"
       paragraph-separate "$")
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
 
 (provide 'setup-general)
