@@ -356,11 +356,26 @@ The source is the text contained in the two delimieters:
            ("C-c n t"   . org-roam-dailies-find-today)
            ("C-c n y"   . org-roam-dailies-find-yesterday)
            ("C-c n r"   . org-roam-dailies-find-tomorrow)
-           ("C-c n g"   . org-roam-graph))
+           ("C-c n g"   . org-roam-graph)
+           )
          :map org-mode-map
-         (("C-c n f" . org-roam-node-find))
-         (("C-c n i" . org-roam-node-insert))
-         (("C-c n I" . org-roam-insert-immediate))))
+         (
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n s"   . org-roam-search)
+         ("C-c n I" . org-roam-insert-immediate))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Open note, filter by tag
+(defun my/org-roam-filter-by-tag (tag-name)
+  (lambda (node)
+    (member tag-name (org-roam-node-tags node))))
+
+(defun my/org-roam-find-by-tag (tag-name)
+  (interactive "stag-name: ")
+  ;; Select a project file to open, creating it if necessary
+  (org-roam-node-find nil nil
+                      (my/org-roam-filter-by-tag tag-name)))
 
 
 (provide 'setup-org)
