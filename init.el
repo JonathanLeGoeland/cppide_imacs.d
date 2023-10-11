@@ -82,3 +82,9 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "purple" :weight bold))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "black" :weight bold))))
  '(rainbow-delimiters-unmatched-face ((t (:background "red" :weight bold)))))
+
+;;------------------------------------------------------------
+;; doom modeline to have a synthetic mode line
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
