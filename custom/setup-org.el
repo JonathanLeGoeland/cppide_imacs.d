@@ -147,10 +147,13 @@
 
 (defun org-get-text-in-src ()
   (save-excursion
-  (let* ((start-point (progn
+  (let* ((start-region (region-beginning))
+         (end-region (region-end))
+         (start-point (progn
                         ;; Search begin_src
                         (search-backward "#+begin_src")
                         (line-move 1)
+                        (beginning-of-line)
                         (point)))
          (end-point (progn
                       ;; Search end_src
@@ -158,6 +161,15 @@
                       (line-move -1)
                       (end-of-line)
                       (point))))
+    ;; If region is active, we will ristrict the command to the region-extract-function
+    (if (region-active-p)
+        (progn
+          (if (< start-region start-point)
+            (error "Region crosses begin_src boundary."))
+          (if (> end-region end-point)
+              (error "Region crosses end_src boundary."))
+          (setq start-point start-region)
+          (setq end-point end-region)))
     ;; Return the sub string:
     (buffer-substring-no-properties start-point end-point))))
 
@@ -165,10 +177,18 @@
   "In Org mode buffer, send the content of the source, if it is
 found, where the cursor is on to a vterm buffer, it it exists.
 
-The source is the text contained in the two delimieters:
-#+begin_src
-#+end_src"
+The piece of source code sent can be :
+ - The full content of current source block if region is not
+ active
+ - Or, if region is active, the select source code.
 
+Note 1: The source block is contained within those two delimiters:
+ 1. #+begin_src
+ 2. #+end_src
+
+Note 2: If region is active, the selection should be within the
+boundaries of the source block.  Otherwise an error is thrown.
+"
   (interactive)
   (save-excursion
   (let* ((sub-str (org-get-text-in-src)))
@@ -221,28 +241,50 @@ The source is the text contained in the two delimieters:
     (goto-char start-idx)
     (dotimes (idx size)
       (insert ".")
-      )))
+      )
+    ;; Return numbers of added characters.
+    size
+    ))
+
 (defun remove-extra-dots ()
-  ;; 1 -- Find the dotes
-  (search-forward "..." (line-end-position))
-  ;; 2 -- Remove the trailing dots
-  (while (= (char-after) ?.)
-    (delete-char 1))
-  )
+  (let ((nb-deleted-char 0))
+    ;; 1 -- Find the dotes
+    (search-forward "..." (line-end-position))
+    ;; 2 -- Remove the trailing dots
+    (while (= (char-after) ?.)
+      (delete-char 1))
+    ;; return number of deleted charset-history
+    nb-deleted-char
+  ))
 
 (defun update-dots ()
   (interactive)
   (save-excursion
-    (beginning-of-line)
-    (remove-extra-dots)
-    (beginning-of-line)
-    (fill-dots)))
+    (if (use-region-p)
+         (progn ;; Apply the dotting on all lines of the region.
+        (let ((start (region-beginning))
+              (end (region-end)))
+          (goto-char start)
+          (while (< (point) end)
+            (beginning-of-line)
+            (setq end (- end (remove-extra-dots)))
+            (beginning-of-line)
+            (setq end (+ end (fill-dots)))
+            (line-move 1))))
+      (progn ;; Apply the dotting one single line-move-ignore-invisible
+        (beginning-of-line)
+        (remove-extra-dots)
+        (beginning-of-line)
+        (fill-dots)))
+    ))
 
 (add-hook 'org-mode-hook
           (lambda () (local-set-key (kbd "C-c C-x j d") #'update-dots)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (use-package org-roam
   ;; :straight t
   ;; :hook
@@ -251,6 +293,7 @@ The source is the text contained in the two delimieters:
   (org-roam-directory "~/MF_org/")
   (org-roam-completion-everywhere t)
   (org-roam-completion-system 'default)
+
   ;; (org-roam-capture-templates
   ;;   '(("d" "default" plain
   ;;      #'org-roam-capture--get-point
