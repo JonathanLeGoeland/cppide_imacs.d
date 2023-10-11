@@ -73,14 +73,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-level-1 ((t (:background nil :extend t :weight bold :foreground "red" :underline t))))
- '(org-level-2 ((t (:background nil :extend t :weight bold :foreground "orange" :underline t))))
- '(org-level-3 ((t (:background nil :extend t :weight bold :foreground "cyan" :underline t))))
- '(org-level-4 ((t (:background nil :extend t :weight bold :foreground "green" :underline t))))
- '(org-level-5 ((t (:background nil :extend t :weight bold :foreground "blue" :underline t))))
- '(org-level-6 ((t (:background nil :extend t :weight bold :foreground "violet" :underline t))))
- '(org-level-7 ((t (:background nil :extend t :weight bold :foreground "purple" :underline t))))
- '(org-level-8 ((t (:background nil :extend t :weight bold :foreground "black" :underline t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "red" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "orange" :weight bold))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "cyan" :weight bold))))
