@@ -89,18 +89,27 @@
         (custom-theme-set-faces 'user
                                 `(org-level-1 ((t (:background nil :extend t :weight bold :foreground "red" :underline t))))
                                 `(org-level-2 ((t (:background nil :extend t :weight bold :foreground "orange" :underline t))))
-                                `(org-level-3 ((t (:background nil :extend t :weight bold :foreground "cyan" :underline t))))
-                                `(org-level-4 ((t (:background nil :extend t :weight bold :foreground "green" :underline t))))
-                                `(org-level-5 ((t (:background nil :extend t :weight bold :foreground "blue" :underline t))))
-                                `(org-level-6 ((t (:background nil :extend t :weight bold :foreground "violet" :underline t))))
-                                `(org-level-7 ((t (:background nil :extend t :weight bold :foreground "purple" :underline t))))
-                                `(org-level-8 ((t (:background nil :extend t :weight bold :foreground "black" :underline t)))))
+                                `(org-level-3 ((t (:background nil :extend t :weight bold :foreground "blue" :underline t))))
+                                `(org-level-4 ((t (:background nil :extend t :weight bold :foreground "SpringGreen" :underline t))))
+                                `(org-level-5 ((t (:background nil :extend t :weight bold :foreground "cyan" :underline t))))
+                                `(org-level-6 ((t (:background nil :extend t :weight bold :foreground "DarkViolet" :underline t))))
+                                `(org-level-7 ((t (:background nil :extend t :weight bold :foreground "DarkTurquoise" :underline t))))
+                                `(org-level-8 ((t (:background nil :extend t :weight bold :foreground "CadetBlue" :underline t)))))
                                 ;;`(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil)))))
 
 
 
-(set-face-attribute 'org-meta-line nil :height 1.0 :slant 'normal :background "gray")
+;;(set-face-attribute 'org-meta-line nil :height 1.0 :slant 'normal :background "gray")
 (setq org-src-fontify-natively t)
+
+(custom-set-faces
+ '(org-block-begin-line
+   ((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
+ '(org-block
+   ((t (:background "#EFF0F1" :extend t))))
+ '(org-block-end-line
+   ((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
+ )
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org-babel configuration
 (org-babel-do-load-languages
