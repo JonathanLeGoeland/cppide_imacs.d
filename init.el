@@ -39,6 +39,7 @@
 (require 'setup-tex)
 (require 'setup-perl)
 (require 'setup-python)
+(require 'setup-text)
 ;;------------------------------------------------------------------------------
 ;; General config
 ;; Load the theme
@@ -61,8 +62,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ecb-options-version "2.50")
+ '(org-agenda-files '("~/MF_org/20230327102806-weekly_planning.org"))
  '(package-selected-packages
-   '(dockerfile-mode htmlize php-mode doom-modeline magit plantuml-mode vterm org-roam org-redmine org-bullets yasnippet-snippets elpy shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
+   '(ecb dockerfile-mode htmlize php-mode doom-modeline magit plantuml-mode vterm org-roam org-redmine org-bullets yasnippet-snippets elpy shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
 
 ;;----------------------------------------------------------
 ;; vterm: To have a good interaction with terminals.
@@ -73,6 +76,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-block ((t (:background "#EFF0F1" :extend t))))
+ '(org-block-begin-line ((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
+ '(org-block-end-line ((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
+ '(org-level-1 ((t (:background nil :extend t :weight bold :foreground "red" :underline t))))
+ '(org-level-2 ((t (:background nil :extend t :weight bold :foreground "orange" :underline t))))
+ '(org-level-3 ((t (:background nil :extend t :weight bold :foreground "blue" :underline t))))
+ '(org-level-4 ((t (:background nil :extend t :weight bold :foreground "SpringGreen" :underline t))))
+ '(org-level-5 ((t (:background nil :extend t :weight bold :foreground "cyan" :underline t))))
+ '(org-level-6 ((t (:background nil :extend t :weight bold :foreground "DarkViolet" :underline t))))
+ '(org-level-7 ((t (:background nil :extend t :weight bold :foreground "DarkTurquoise" :underline t))))
+ '(org-level-8 ((t (:background nil :extend t :weight bold :foreground "CadetBlue" :underline t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "red" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "orange" :weight bold))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "cyan" :weight bold))))

@@ -347,6 +347,17 @@ The source is the text contained in the two delimieters:
   ;;      :file-name "Journal/%<%Y-%m-%d>"
   ;;      :olp ("Log")
   ;;      :head "#+title: %<%Y-%m-%d %a>\n\n[[roam:%<%Y-%B>]]\n\n")))
+  :config
+  (message "--> %s <--" org-roam-directory)
+  (defun org-roam-search (what)
+    "Quick Search for a topic in my org-roam folder.
+org-roam folder is given by variable org-roam-directory
+"
+    (interactive "sSearch for: ")
+    (rgrep what "*.org" org-roam-directory nil))
+
+
+
   :bind (:map org-roam-mode-map
           (("C-c n l"   . org-roam)
            ("C-c n f"   . org-roam-node-find)
@@ -376,6 +387,11 @@ The source is the text contained in the two delimieters:
   ;; Select a project file to open, creating it if necessary
   (org-roam-node-find nil nil
                       (my/org-roam-filter-by-tag tag-name)))
+
+
+(defun my/org-open-weekly ()
+  (interactive)
+  (find-file "~/MF_org/20230327102806-weekly_planning.org"))
 
 
 (provide 'setup-org)
