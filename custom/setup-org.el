@@ -391,7 +391,16 @@ org-roam folder is given by variable org-roam-directory
 
 (defun my/org-open-weekly ()
   (interactive)
-  (find-file "~/MF_org/20230327102806-weekly_planning.org"))
+  (find-file "~/MF_org/20240108100530-weekly_planning_2024.org"))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; org-roam-dailies
+(setq org-roam-dailies-directory "daily/")
+
+(setq org-roam-dailies-capture-templates
+      '(("d" "default" entry
+         "* %?"
+         :target (file+head "%<%Y-%m-%d>.org"
+                            "#+title: %<%Y-%m-%d>\n"))))
 
 (provide 'setup-org)

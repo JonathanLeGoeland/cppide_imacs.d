@@ -63,9 +63,36 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ecb-options-version "2.50")
- '(org-agenda-files '("~/MF_org/20230327102806-weekly_planning.org"))
+ '(org-agenda-files
+   '("~/MF_org/20240306100241-iridium.org" "/home/jonathan/MF_org/20240108100530-weekly_planning_2024.org" "/home/jonathan/MF_org/20240207101108-difmetportage.org"))
  '(package-selected-packages
-   '(ecb dockerfile-mode htmlize php-mode doom-modeline magit plantuml-mode vterm org-roam org-redmine org-bullets yasnippet-snippets elpy shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
+   '(magit-todos rust-mode lsp-mode web-search org-pomodoro paredit poporg json-mode geiser-guile geiser ecb dockerfile-mode htmlize php-mode doom-modeline magit plantuml-mode vterm org-roam org-redmine org-bullets yasnippet-snippets elpy shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))
+ '(web-search-providers
+   '(("500px" "https://500px.com/search?q=%s&type=photos" "Photos")
+     ("Arch Package" "https://www.archlinux.org/packages/?q=%s" "Arch Linux")
+     ("Arch Wiki" "https://wiki.archlinux.org/index.php?search=%s" "Arch Linux")
+     ("Bandcamp" "https://bandcamp.com/search?q=%s" "Music")
+     ("Bing" "https://www.bing.com/search?q=%s" "Search")
+     ("Debian Manpages" "https://manpages.debian.org/jump?q=%s")
+     ("Debian Package" "https://packages.debian.org/search?keywords=%s&searchon=names&suite=stable&section=all")
+     ("DuckDuckGo" "https://duckduckgo.com/lite/?q=%s" "Search")
+     ("Gist" "https://gist.github.com/search?q=%s" "Code")
+     ("GitHub" "https://github.com/search?q=%s" "Code")
+     ("Google" "https://www.google.com/search?q=%s" "Search")
+     ("Hacker News" "https://hn.algolia.com/?q=%s" "Tech-News")
+     ("MacPorts" "https://www.macports.org/ports.php?by=name&substr=%s")
+     ("Pinterest" "https://www.pinterest.com/search/pins/?q=%s")
+     ("Reddit" web-search-providers--format-url:reddit)
+     ("RubyGems" "https://rubygems.org/search?query=%s")
+     ("Soundcloud" "https://soundcloud.com/search?q=%s" "Music")
+     ("Stack Overflow" "https://stackoverflow.com/search?q=%s" "Code")
+     ("Wikipedia" "https://en.wikipedia.org/wiki/Special:Search?search=%s" "Education")
+     ("YouTube" "https://www.youtube.com/results?search_query=%s")
+     ("Zhihu" "https://www.zhihu.com/search?type=content&q=%s" "Forums")
+     ("Dico" "https://fr.wiktionary.org/wiki/%s")
+     ("Conjugeur" "https://leconjugueur.lefigaro.fr/php5/index.php?verbe=%s")
+     ("CPAN" "https://metacpan.org/search?q=%s")
+     ("Pkgs" "https://pkgs.org/search/?q=%s"))))
 
 ;;----------------------------------------------------------
 ;; vterm: To have a good interaction with terminals.
@@ -102,3 +129,11 @@
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
+(put 'upcase-region 'disabled nil)
+
+;;------------------------------------------------------------
+;; todos
+(require 'magit-todos)
+(use-package magit-todos
+  :after magit
+  :config (magit-todos-mode 1))
