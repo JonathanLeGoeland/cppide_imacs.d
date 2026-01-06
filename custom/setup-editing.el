@@ -39,17 +39,16 @@
 
 ;; Package: volatile-highlights
 ;; GROUP: Editing -> Volatile Highlights
-(use-package volatile-highlights
-  :init
-  (volatile-highlights-mode t))
+;; (use-package volatile-highlights
+;;   :init
+;;   (volatile-highlights-mode t))
 
 ;; Package: undo-tree
 ;; GROUP: Editing -> Undo -> Undo Tree
-(use-package undo-tree
-  :init
-  (global-undo-tree-mode 1))
-(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
-
+;; (use-package undo-tree
+;;   :init
+;;   (global-undo-tree-mode 1))
+;; (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 ;; Package: yasnippet
 ;; GROUP: Editing -> Yasnippet
 ;; Package: yasnippet

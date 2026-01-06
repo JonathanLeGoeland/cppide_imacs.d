@@ -64,7 +64,7 @@
 
 ;; Which key mode
 ;; (require 'which-key)
-(which-key-mode)
+;; (which-key-mode)
 
 
 ;; rainbow-delimiters mode
@@ -182,5 +182,9 @@ Version 2015-09-18"
 ;; yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; web-search
+(require 'web-search)
 
 (provide 'setup-general)

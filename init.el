@@ -24,22 +24,25 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(add-to-list 'load-path "/home/jonathan/.emacs.d/custom")
+(add-to-list 'load-path "~/.emacs.d/custom")
 
 (require 'setup-general)
-(if (version< emacs-version "24.4")
-    (require 'setup-ivy-counsel)
-  (require 'setup-helm)
-  (require 'setup-helm-gtags))
-;; (require 'setup-ggtags)
+(require 'setup-lsp)
+;; (if (version< emacs-version "24.4")
+;;     (require 'setup-ivy-counsel)
+;;   (require 'setup-helm)
+;;   (require 'setup-helm-gtags))
+(require 'setup-helm)
+(require 'setup-ggtags)
 (require 'setup-cedet)
-(require 'setup-editing)
+(require 'setup-editing) 
 (require 'setup-c)
 (require 'setup-org)
-(require 'setup-tex)
+;; (require 'setup-tex)
 (require 'setup-perl)
 (require 'setup-python)
 (require 'setup-text)
+(require 'setup-prog)
 ;;------------------------------------------------------------------------------
 ;; General config
 ;; Load the theme
@@ -47,9 +50,9 @@
 ;; show paren mode
 (show-paren-mode)
 
-;; Do not warn for safty.
-(put 'flycheck-clang-args 'safe-local-variable (lambda (xx) t))
-(put 'company-clang-arguments 'safe-local-variable (lambda (xxe) t))
+;; ;; Do not warn for safty.
+;; (put 'flycheck-clang-args 'safe-local-variable (lambda (xx) t))
+;; (put 'company-clang-arguments 'safe-local-variable (lambda (xxe) t))
 
 
 ;; function-args
@@ -64,9 +67,11 @@
  ;; If there is more than one, they won't work right.
  '(ecb-options-version "2.50")
  '(org-agenda-files
-   '("~/MF_org/20240306100241-iridium.org" "/home/jonathan/MF_org/20240108100530-weekly_planning_2024.org" "/home/jonathan/MF_org/20240207101108-difmetportage.org"))
+   '("~/mf_org/20251219162304-weekly_planing_2026.org" "/home/jonathan/mf_org/20251017094806-transmet_gestion.org" "/home/jonathan/mf_org/20250318161030-transmet_python_gestion.org" "/home/jonathan/mf_org/20250402145718-deploiement_transmet_64bits.org" "/home/jonathan/mf_org/20240903103939-api_sadis.org"))
+ '(org-safe-remote-resources
+   '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg\\.setup\\'"))
  '(package-selected-packages
-   '(magit-todos rust-mode lsp-mode web-search org-pomodoro paredit poporg json-mode geiser-guile geiser ecb dockerfile-mode htmlize php-mode doom-modeline magit plantuml-mode vterm org-roam org-redmine org-bullets yasnippet-snippets elpy shell-pop shx ace-window yaml-mode markdown-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))
+   '(alarm-clock ox-gfm elmine request s lsp-docker paredit fold-this lsp go-mode dockerfile-mode lsp-ui markdown-mode lsp-jedi web-search which-key doom-modeline git-gutter-fringe git-gutter yaml-mode magit elpy multishell multi-vterm iedit anzu comment-dwim-2 ws-butler dtrt-indent clean-aindent-mode undo-tree volatile-highlights zygospore yasnippet rainbow-delimiters projectile helm ggtags company ace-window))
  '(web-search-providers
    '(("500px" "https://500px.com/search?q=%s&type=photos" "Photos")
      ("Arch Package" "https://www.archlinux.org/packages/?q=%s" "Arch Linux")
@@ -98,12 +103,35 @@
 ;; vterm: To have a good interaction with terminals.
 (use-package vterm
   :ensure t)
+;; multi-vterm
+(use-package multi-vterm)
+(define-key global-map (kbd "C-c t o") 'multi-vterm)
+
+;; ;;------------------------------------------------------------
+;; ;; doom modeline to have a synthetic mode line
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-icon nil)
+  (setq doom-modeline-buffer-file-name-style 'buffer-name))
+
+;; ;;------------------------------------------------------------
+;; ;; todos
+;; (require 'magit-todos)
+;; (use-package magit-todos
+;;   :after magit
+;;   :config (magit-todos-mode 1))
+
+
+;;----------------------------------------------------------
+;; Customisation des faces:
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-block ((t (:background "#EFF0F1" :extend t))))
  '(org-block-begin-line ((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
  '(org-block-end-line ((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
  '(org-level-1 ((t (:background nil :extend t :weight bold :foreground "red" :underline t))))
@@ -123,17 +151,8 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "purple" :weight bold))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "black" :weight bold))))
  '(rainbow-delimiters-unmatched-face ((t (:background "red" :weight bold)))))
+(put 'narrow-to-region 'disabled nil)
 
-;;------------------------------------------------------------
-;; doom modeline to have a synthetic mode line
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
-(put 'upcase-region 'disabled nil)
-
-;;------------------------------------------------------------
-;; todos
-(require 'magit-todos)
-(use-package magit-todos
-  :after magit
-  :config (magit-todos-mode 1))
+;; Changement du thème.
+;; (load-theme 'modus-vivendi t)
+(load-theme 'leuven)

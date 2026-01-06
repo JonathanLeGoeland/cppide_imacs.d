@@ -11,12 +11,12 @@
 
 (add-hook 'org-mode-hook (lambda ()
                            ;; (ispell-change-dictionary "en")
+                           (setq ispell-dictionary "fr_FR")
                            (flyspell-mode)
                            (set-fill-column 80)
                            (auto-fill-mode)
                            ;; (bline-minor-mode)
                            ))
-(ispell-change-dictionary "en")
 
 (add-hook 'org-mode-hook
           (lambda () (local-set-key (kbd "C-c C-x t") #'ispell-change-dictionary)))
@@ -105,8 +105,8 @@
 (custom-set-faces
  '(org-block-begin-line
    ((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
- '(org-block
-   ((t (:background "#EFF0F1" :extend t))))
+ ;;'(org-block
+ ;;  ((t (:background "#EFF0F1" :extend t))))
  '(org-block-end-line
    ((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
  )
@@ -128,6 +128,8 @@
 
 
 (setq org-confirm-babel-evaluate nil)
+
+(setq org-ditaa-jar-path "/home/jonathan/.emacs.d/ditaa0_9.jar")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Export self contained html files
@@ -173,6 +175,18 @@
     ;; Return the sub string:
     (buffer-substring-no-properties start-point end-point))))
 
+(setq org-vterm-buffer "*vterminal*")
+
+(defun org-set-vterm-buffer (buffer-name)
+  "Set buffer for vterm interaction."
+  (interactive "b")
+  (setq org-vterm-buffer buffer-name))
+
+(defun org-show-vterm-buffer ()
+  "Show current buffer used for vterm interaction."
+  (interactive)
+  (message "%s" org-vterm-buffer))
+
 (defun org-send-src-to-vterm ()
   "In Org mode buffer, send the content of the source, if it is
 found, where the cursor is on to a vterm buffer, it it exists.
@@ -196,7 +210,9 @@ boundaries of the source block.  Otherwise an error is thrown.
     ;; Insert the stuff in vterm buffer, if possible.
     (condition-case nil
         (progn
-          (set-buffer "*vterm*")
+          (set-buffer org-vterm-buffer)
+          (if vterm-copy-mode
+              (vterm-copy-mode-done nil))
           (term-send-raw-string (concat sub-str "\n")))
       (error
          (message "Cannot copy content to *vterm*")
@@ -290,7 +306,7 @@ The source is the text contained in the two delimieters:
   ;; :hook
   ;; (after-init . org-roam-mode)
   :custom
-  (org-roam-directory "~/MF_org/")
+  (org-roam-directory "~/mf_org/")
   (org-roam-completion-everywhere t)
   (org-roam-completion-system 'default)
 
@@ -367,7 +383,7 @@ org-roam folder is given by variable org-roam-directory
            ("C-c n t"   . org-roam-dailies-find-today)
            ("C-c n y"   . org-roam-dailies-find-yesterday)
            ("C-c n r"   . org-roam-dailies-find-tomorrow)
-           ("C-c n g"   . org-roam-graph)
+           ;;("C-c n g"   . org-roam-graph)
            )
          :map org-mode-map
          (
@@ -391,7 +407,7 @@ org-roam folder is given by variable org-roam-directory
 
 (defun my/org-open-weekly ()
   (interactive)
-  (find-file "~/MF_org/20240108100530-weekly_planning_2024.org"))
+  (find-file "~/mf_org/20251219162304-weekly_planing_2026.org"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org-roam-dailies

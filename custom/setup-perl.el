@@ -19,17 +19,22 @@
 ;; (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 ;; shell stuffs
-(require 'shx)
-(add-hook 'shell-mode-hook 'shx-mode)
+;; (require 'shx) ; Je ne parviens pas à télécharger ce package.
+;; (add-hook 'shell-mode-hook 'shx-mode)
 
-(require 'shell-pop)
-(setq shell-pop-autocd-to-working-dir t)
-(global-set-key (kbd "C-c jsp") 'shell-pop)
+;; (require 'shell-pop)
+;; (setq shell-pop-autocd-to-working-dir t)
+;; (global-set-key (kbd "C-c jsp") 'shell-pop)
 
 ;; auto highlight symbols-consed
 (use-package auto-highlight-symbol)
 (require 'auto-highlight-symbol)
 (add-hook 'cperl-mode-hook 'auto-highlight-symbol-mode)
 
+(use-package lsp-mode)
+(require 'lsp-mode)
+(add-hook 'cperl-mode-hook 'lsp)
+
+(setq lsp-perl-perl-inc '("/home/jonathan/Work/Difmet/difmet/src/perl"))
 
 (provide 'setup-perl)

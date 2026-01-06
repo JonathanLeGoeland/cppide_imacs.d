@@ -15,6 +15,7 @@
 (use-package auto-highlight-symbol)
 (require 'auto-highlight-symbol)
 (add-hook 'c-mode-common-hook 'auto-highlight-symbol-mode)
+(add-hook 'c-mode-common-hook 'lsp-mode)
 ;;(auto-highlight-symbol-mode)
 
 ;; Available C style:
@@ -85,6 +86,9 @@
 (global-set-key (kbd "C-c jit") 'insert-todo)
 
 
-
+;; Amélioration de l'expérience utilisateur de lsp
+;; (define-key c-mode-map (kbd "C-l n") 'yas-next-field)
+;; (define-key c-mode-map (kbd "C-l p") 'yas-prev-field)
+;; (define-key c-mode-map (kbd "C-l") 'recenter-top-bottom)
 
 (provide 'setup-c)
