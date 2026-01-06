@@ -154,5 +154,4 @@
 (put 'narrow-to-region 'disabled nil)
 
 ;; Changement du thème.
-;; (load-theme 'modus-vivendi t)
 (load-theme 'leuven)
