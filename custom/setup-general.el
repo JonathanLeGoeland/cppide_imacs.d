@@ -171,7 +171,9 @@ Version 2015-09-18"
                  "%b"))))
 
 ;; ace-window-display-mode
-(require 'ace-window)
+;;(require 'ace-window)
+(use-package ace-window
+  :ensure t)
 (global-set-key (kbd "C-x o") 'ace-window)
 
 ;; Allow fill-paragraph to work nicely on bullet list
@@ -180,11 +182,15 @@ Version 2015-09-18"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; yasnippet
-(require 'yasnippet)
+;;(require 'yasnippet)
+(use-package yasnippet
+  :ensure t)
 (yas-global-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; web-search
-(require 'web-search)
+;;(require 'web-search)
+(use-package web-search
+  :ensure t)
 
 (provide 'setup-general)

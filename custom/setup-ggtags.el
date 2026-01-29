@@ -1,4 +1,6 @@
-(require 'ggtags)
+;;(require 'ggtags)
+(use-package ggtags
+  :ensure t)
 
 (ggtags-mode 1)
 (add-hook 'c-mode-common-hook

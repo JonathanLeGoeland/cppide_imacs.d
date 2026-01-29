@@ -101,8 +101,8 @@
 
 ;;----------------------------------------------------------
 ;; vterm: To have a good interaction with terminals.
-(use-package vterm
-  :ensure t)
+;; (use-package vterm
+;;   :ensure t)
 ;; multi-vterm
 (use-package multi-vterm)
 (define-key global-map (kbd "C-c t o") 'multi-vterm)

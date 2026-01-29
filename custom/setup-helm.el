@@ -144,7 +144,9 @@
 ;; (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
 
 ;; ==============================================================================
-(require 'helm)
+;; (require 'helm)
+(use-package helm
+  :ensure t)
 
 
 (helm-mode 1)
