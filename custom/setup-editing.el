@@ -262,4 +262,16 @@ Position the cursor at it's beginning, according to the current mode."
 (global-unset-key (kbd "C-t"))
 (global-set-key (kbd "C-t") 'transpose-chars)
 
+;; ============================================================================
+(use-package git-gutter
+  :ensure t)
+
+;; If you enable global minor mode
+(global-git-gutter-mode t)
+
+;; Jump to next/previous hunk
+(global-set-key (kbd "C-c j p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-c j n") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-c j r") 'git-gutter:revert-hunk)
+
 (provide 'setup-editing)
