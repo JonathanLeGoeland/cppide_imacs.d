@@ -10,7 +10,7 @@
       '((sequence "TODO" "DELEGATED" "STOPPED" "WAITING" "DONE" )))
 
 (add-hook 'org-mode-hook (lambda ()
-                           ;; (ispell-change-dictionary "en")
+                           (ispell-change-dictionary "fr_FR")
                            (setq ispell-dictionary "fr_FR")
                            (flyspell-mode)
                            (set-fill-column 80)
@@ -123,14 +123,14 @@
                              (emacs-lisp . t)))
 
 ;; Use 'plantuml' command to generate UML diagram:
-(setq org-plantuml-exec-mode 'plantuml)
+(setq org-plantuml-exec-mode nil)
 (setq org-babel-python-command "python3")
 
 
 (setq org-confirm-babel-evaluate nil)
 
 (setq org-ditaa-jar-path "/home/jonathan/.emacs.d/ditaa0_9.jar")
-
+(setq org-plantuml-jar-path "/home/jonathan/.emacs.d/plantuml-1.2026.1.jar")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Export self contained html files
 
@@ -204,6 +204,8 @@ Note 2: If region is active, the selection should be within the
 boundaries of the source block.  Otherwise an error is thrown.
 "
   (interactive)
+  ;; Affichage du terminal si il n'est pas encore affiché.
+  (display-buffer org-vterm-buffer)
   (save-excursion
   (let* ((sub-str (org-get-text-in-src)))
 
