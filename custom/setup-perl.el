@@ -35,6 +35,6 @@
 (require 'lsp-mode)
 (add-hook 'cperl-mode-hook 'lsp)
 
-(setq lsp-perl-perl-inc '("/home/jonathan/Work/Difmet/difmet/src/perl"))
-
+;; (setq lsp-perl-perl-inc '("/home/jonathan/Work/Difmet/difmet/src/perl"))
+(setq lsp-perl-perl-inc ["/home/jonathan/Work/Transmet/transmet/src/perl/"])
 (provide 'setup-perl)
