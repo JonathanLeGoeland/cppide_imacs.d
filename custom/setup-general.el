@@ -48,8 +48,10 @@
 ;; Package: projejctile
 (use-package projectile
   :init
-  (projectile-global-mode)
-  (setq projectile-enable-caching t))
+  ; (projectile-global-mode)
+  (setq projectile-enable-caching t)
+  (projectile-mode +1))
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; Package zygospore
 (use-package zygospore
