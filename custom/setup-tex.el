@@ -14,6 +14,6 @@
                            (auto-fill-mode)
                            (bline-minor-mode)
                            ))
-(ispell-change-dictionary "en")
+(ispell-change-dictionary "fr_FR")
 
 (provide 'setup-tex)
