@@ -71,7 +71,7 @@
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg\\.setup\\'"))
  '(package-selected-packages
-   '(alarm-clock ox-gfm elmine request s lsp-docker paredit fold-this lsp go-mode dockerfile-mode lsp-ui markdown-mode lsp-jedi web-search which-key doom-modeline git-gutter-fringe git-gutter yaml-mode magit elpy multishell multi-vterm iedit anzu comment-dwim-2 ws-butler dtrt-indent clean-aindent-mode undo-tree volatile-highlights zygospore yasnippet rainbow-delimiters projectile helm ggtags company ace-window))
+   '(fancy-fill-paragraph log4j-mode logview htmlize nlinum lsp-doker dockerfile-mode alarm-clock ox-gfm elmine request s lsp-docker paredit fold-this lsp go-mode lsp-ui markdown-mode lsp-jedi web-search which-key doom-modeline git-gutter-fringe git-gutter yaml-mode magit elpy multishell multi-vterm iedit anzu comment-dwim-2 ws-butler dtrt-indent clean-aindent-mode undo-tree volatile-highlights zygospore yasnippet rainbow-delimiters projectile helm ggtags company ace-window))
  '(web-search-providers
    '(("500px" "https://500px.com/search?q=%s&type=photos" "Photos")
      ("Arch Package" "https://www.archlinux.org/packages/?q=%s" "Arch Linux")
@@ -125,6 +125,11 @@
 
 
 ;;----------------------------------------------------------
+;; Yaml mode
+(use-package yaml-mode
+  :ensure t)
+
+;;----------------------------------------------------------
 ;; Customisation des faces:
 
 (custom-set-faces
@@ -137,8 +142,8 @@
  '(org-level-1 ((t (:background nil :extend t :weight bold :foreground "red" :underline t))))
  '(org-level-2 ((t (:background nil :extend t :weight bold :foreground "orange" :underline t))))
  '(org-level-3 ((t (:background nil :extend t :weight bold :foreground "blue" :underline t))))
- '(org-level-4 ((t (:background nil :extend t :weight bold :foreground "SpringGreen" :underline t))))
- '(org-level-5 ((t (:background nil :extend t :weight bold :foreground "cyan" :underline t))))
+ '(org-level-4 ((t (:background nil :extend t :weight bold :foreground "green" :underline t))))
+ '(org-level-5 ((t (:background nil :extend t :weight bold :foreground "magenta" :underline t))))
  '(org-level-6 ((t (:background nil :extend t :weight bold :foreground "DarkViolet" :underline t))))
  '(org-level-7 ((t (:background nil :extend t :weight bold :foreground "DarkTurquoise" :underline t))))
  '(org-level-8 ((t (:background nil :extend t :weight bold :foreground "CadetBlue" :underline t))))
