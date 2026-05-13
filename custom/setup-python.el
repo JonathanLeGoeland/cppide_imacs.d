@@ -5,11 +5,14 @@
 
 (use-package flycheck)
 (require 'flycheck)
-(add-hook 'python-mode-hook 'flycheck-mode)
 
 (defun customize-python-mode ()
   (set-fill-column 79)
-  (display-fill-column-indicator-mode))
+  (display-fill-column-indicator-mode)
+  (flycheck-mode)
+  (lsp-mode))
+
+(add-hook 'python-mode-hook 'customize-python-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package lsp-jedi
