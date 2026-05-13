@@ -65,9 +65,9 @@
 ;(windmove-default-keybindings)
 
 ;; Which key mode
-;; (require 'which-key)
-;; (which-key-mode)
-
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
 
 ;; rainbow-delimiters mode
 (use-package rainbow-delimiters)
