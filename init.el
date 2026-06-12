@@ -71,7 +71,7 @@
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg\\.setup\\'"))
  '(package-selected-packages
-   '(fancy-fill-paragraph log4j-mode logview htmlize nlinum lsp-doker dockerfile-mode alarm-clock ox-gfm elmine request s lsp-docker paredit fold-this lsp go-mode lsp-ui markdown-mode lsp-jedi web-search which-key doom-modeline git-gutter-fringe git-gutter yaml-mode magit elpy multishell multi-vterm iedit anzu comment-dwim-2 ws-butler dtrt-indent clean-aindent-mode undo-tree volatile-highlights zygospore yasnippet rainbow-delimiters projectile helm ggtags company ace-window))
+   '(ace-jump-mode fancy-fill-paragraph log4j-mode logview htmlize nlinum lsp-doker dockerfile-mode alarm-clock ox-gfm elmine request s lsp-docker paredit fold-this lsp go-mode lsp-ui markdown-mode lsp-jedi web-search which-key doom-modeline git-gutter-fringe git-gutter yaml-mode magit elpy multishell multi-vterm iedit anzu comment-dwim-2 ws-butler dtrt-indent clean-aindent-mode undo-tree volatile-highlights zygospore yasnippet rainbow-delimiters projectile helm ggtags company ace-window))
  '(web-search-providers
    '(("500px" "https://500px.com/search?q=%s&type=photos" "Photos")
      ("Arch Package" "https://www.archlinux.org/packages/?q=%s" "Arch Linux")
@@ -139,14 +139,14 @@
  ;; If there is more than one, they won't work right.
  '(org-block-begin-line ((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
  '(org-block-end-line ((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
- '(org-level-1 ((t (:background nil :extend t :weight bold :foreground "red" :underline t))))
- '(org-level-2 ((t (:background nil :extend t :weight bold :foreground "orange" :underline t))))
- '(org-level-3 ((t (:background nil :extend t :weight bold :foreground "blue" :underline t))))
- '(org-level-4 ((t (:background nil :extend t :weight bold :foreground "green" :underline t))))
- '(org-level-5 ((t (:background nil :extend t :weight bold :foreground "magenta" :underline t))))
- '(org-level-6 ((t (:background nil :extend t :weight bold :foreground "DarkViolet" :underline t))))
- '(org-level-7 ((t (:background nil :extend t :weight bold :foreground "DarkTurquoise" :underline t))))
- '(org-level-8 ((t (:background nil :extend t :weight bold :foreground "CadetBlue" :underline t))))
+ '(org-level-1 ((t (:background unspecified :extend t :weight bold :foreground "red" :underline t))))
+ '(org-level-2 ((t (:background unspecified :extend t :weight bold :foreground "orange" :underline t))))
+ '(org-level-3 ((t (:background unspecified :extend t :weight bold :foreground "blue" :underline t))))
+ '(org-level-4 ((t (:background unspecified :extend t :weight bold :foreground "green" :underline t))))
+ '(org-level-5 ((t (:background unspecified :extend t :weight bold :foreground "magenta" :underline t))))
+ '(org-level-6 ((t (:background unspecified :extend t :weight bold :foreground "DarkViolet" :underline t))))
+ '(org-level-7 ((t (:background unspecified :extend t :weight bold :foreground "DarkTurquoise" :underline t))))
+ '(org-level-8 ((t (:background unspecified :extend t :weight bold :foreground "CadetBlue" :underline t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "red" :weight bold))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "orange" :weight bold))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "cyan" :weight bold))))

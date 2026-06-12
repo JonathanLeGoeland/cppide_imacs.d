@@ -27,14 +27,15 @@
  'user
  '(org-block-begin-line ((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
  '(org-block-end-line ((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
- `(org-level-1 ((t (:background nil :extend t :weight bold :foreground "red" :underline t))))
- `(org-level-2 ((t (:background nil :extend t :weight bold :foreground "orange" :underline t))))
- `(org-level-3 ((t (:background nil :extend t :weight bold :foreground "blue" :underline t))))
- `(org-level-4 ((t (:background nil :extend t :weight bold :foreground "green" :underline t))))
- `(org-level-5 ((t (:background nil :extend t :weight bold :foreground "magenta" :underline t))))
- `(org-level-6 ((t (:background nil :extend t :weight bold :foreground "DarkViolet" :underline t))))
- `(org-level-7 ((t (:background nil :extend t :weight bold :foreground "DarkTurquoise" :underline t))))
- `(org-level-8 ((t (:background nil :extend t :weight bold :foreground "CadetBlue" :underline t)))))
+ `(org-level-1 ((t (:background unspecified  :extend t :weight bold :foreground "red" :underline t))))
+ `(org-level-2 ((t (:background unspecified :extend t :weight bold :foreground "orange" :underline t))))
+ `(org-level-3 ((t (:background unspecified :extend t :weight bold :foreground "blue" :underline t))))
+ `(org-level-4 ((t (:background unspecified :extend t :weight bold :foreground "green" :underline t))))
+ `(org-level-5 ((t (:background unspecified :extend t :weight bold :foreground "magenta" :underline t))))
+ `(org-level-6 ((t (:background unspecified :extend t :weight bold :foreground "DarkViolet" :underline t))))
+ `(org-level-7 ((t (:background unspecified :extend t :weight bold :foreground "DarkTurquoise" :underline t))))
+ `(org-level-8 ((t (:background unspecified :extend t :weight bold :foreground "CadetBlue" :underline t))))
+ )
 ;;`(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil)))))
 
 
