@@ -206,5 +206,12 @@ Version 2015-09-18"
 (use-package alarm-clock
   :ensure t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ace-jump-mode
+(use-package ace-jump-mode
+  :ensure t)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+
 
 (provide 'setup-general)
