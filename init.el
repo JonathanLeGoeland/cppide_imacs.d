@@ -71,7 +71,7 @@
  '(org-safe-remote-resources
    '("\\`https://fniessen\\.github\\.io/org-html-themes/org/theme-readtheorg\\.setup\\'"))
  '(package-selected-packages
-   '(ace-jump-mode fancy-fill-paragraph log4j-mode logview htmlize nlinum lsp-doker dockerfile-mode alarm-clock ox-gfm elmine request s lsp-docker paredit fold-this lsp go-mode lsp-ui markdown-mode lsp-jedi web-search which-key doom-modeline git-gutter-fringe git-gutter yaml-mode magit elpy multishell multi-vterm iedit anzu comment-dwim-2 ws-butler dtrt-indent clean-aindent-mode undo-tree volatile-highlights zygospore yasnippet rainbow-delimiters projectile helm ggtags company ace-window))
+   '(gptel-agent magit-todos svg-clock replace occur shell-pop gptel ace-jump-mode fancy-fill-paragraph log4j-mode logview htmlize nlinum lsp-doker dockerfile-mode alarm-clock ox-gfm elmine request s lsp-docker paredit fold-this lsp go-mode lsp-ui markdown-mode lsp-jedi web-search which-key doom-modeline git-gutter-fringe git-gutter yaml-mode magit elpy multishell multi-vterm iedit anzu comment-dwim-2 ws-butler dtrt-indent clean-aindent-mode undo-tree volatile-highlights zygospore yasnippet rainbow-delimiters projectile helm ggtags company ace-window))
  '(web-search-providers
    '(("500px" "https://500px.com/search?q=%s&type=photos" "Photos")
      ("Arch Package" "https://www.archlinux.org/packages/?q=%s" "Arch Linux")
