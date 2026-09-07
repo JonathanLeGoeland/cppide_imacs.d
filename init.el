@@ -43,6 +43,8 @@
 (require 'setup-python)
 (require 'setup-text)
 (require 'setup-prog)
+(require 'setup-shell)
+(require 'setup-ai)
 ;;------------------------------------------------------------------------------
 ;; General config
 ;; Load the theme
