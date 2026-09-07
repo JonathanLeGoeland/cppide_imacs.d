@@ -160,3 +160,4 @@
 
 ;; Changement du thème.
 (load-theme 'leuven)
+(put 'upcase-region 'disabled nil)
