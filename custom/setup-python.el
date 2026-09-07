@@ -31,4 +31,15 @@
   (vconcat lsp-jedi-workspace-extra-paths
            ["/home/jonathan/.pyenv/versions/3.8.20/envs/transmet-python/lib/python3.8/site-packages"]))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Commandes personelles
+
+(defun open-transmet-python ()
+"Permet d'ouvrir le readme de transmet-python et d'activer
+l'environnement virtuel qui convient."
+  (interactive)
+  (pyvenv-activate "/home/jonathan/.pyenv/versions/transmet-python/")
+  (find-file "/home/jonathan/Work/Transmet/transmet-python/readme.org"))
+
+
 (provide 'setup-python)
