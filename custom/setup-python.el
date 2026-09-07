@@ -3,6 +3,15 @@
   :init
   (elpy-enable))
 
+;; elpy utilise occur pour afficher la structure, je veux aller là où je veux et supprimer le buffer donnant la structure.
+(defun occur-mode-goto-occurence-and-close ()
+  (interactive)
+
+  (occur-mode-goto-occurrence)
+  (kill-buffer "*Occur*")
+  )
+(keymap-set occur-mode-map "RET" 'occur-mode-goto-occurence-and-close)
+
 (use-package flycheck)
 (require 'flycheck)
 
