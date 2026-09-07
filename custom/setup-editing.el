@@ -274,4 +274,6 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "C-c j n") 'git-gutter:next-hunk)
 (global-set-key (kbd "C-c j r") 'git-gutter:revert-hunk)
 
+;; ============================================================================
+
 (provide 'setup-editing)
